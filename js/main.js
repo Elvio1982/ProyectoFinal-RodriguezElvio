@@ -1,6 +1,7 @@
 const shopContent = document.getElementById("shopContent");
 const vercarrito = document.getElementById("vercarrito");
 const modalContainer = document.getElementById("modal-container");
+const cantidadcarrito = document.getElementById("cantidadcarrito");
 
 let carrito = [];
 
@@ -39,6 +40,7 @@ carrito.push ({
   });
 }
   console.log(carrito);
+  carritocounter();
 });
 });
 

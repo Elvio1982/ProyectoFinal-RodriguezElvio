@@ -154,3 +154,16 @@ width: 100%;
 .delete-product {
     cursor: pointer;
 }
+/*Carritocounter */
+.cantidad-carrito {
+    background-color: red;
+    color: white;
+    border-radius: 50px;
+    font-size: 11px;
+    padding: 4px;
+    top: 35px;
+    right: 14px;
+    position: absolute;
+    display: none;
+
+}

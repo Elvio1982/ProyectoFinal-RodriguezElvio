@@ -55,5 +55,11 @@ modalHeader.innerHTML = `
     carrito = carrito.filter((carritoId) => {
       return carritoId !== foundId;
       });
+      carritocounter();
       pintarcarrito();
 };
+
+const carritocounter = ()  => {
+  cantidadcarrito.style.display = "block";
+  cantidadcarrito.innerText = carrito.length
+}
