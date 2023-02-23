@@ -4,11 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Supermarket</title>
   </head>
   <body>
-    <h1>Segunda-Prentrega</h1>
-    <h2>Carrito de compras</h2>
+    <!--navBar-->
+    <div class="nav-container">
+      <nav class="navbar">
+        <h1 class="navbar-logo">Shop de productos.</h1>
+        <h1 class="ver-carrito" id="vercarrito">🛒</h1>
+      </nav>
+    </div>
+
+    <!--banner-->
+    <div class="banner">
+      <div class="banner-container">
+        <h1>Supermercado</h1>
+        <p>El mejor lugar para comprar online</p>
+      </div>
+    </div>   
+
+    <!--show content-->
+    <div id="shopContent" class="shop-content"></div>
+
+    <!--Modal container-->
+    <div id="modal-container" class="modal-container"></div>
+
+
+    <script src="js/productos.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/carrito.js"></script>
   </body>
 </html>
