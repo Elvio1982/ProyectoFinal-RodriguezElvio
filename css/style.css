@@ -148,6 +148,9 @@ width: 100%;
     padding: 20px;
     text-align: center;
     padding-top: 20px;
+}
 
-
+/*eliminar producto*/
+.delete-product {
+    cursor: pointer;
 }

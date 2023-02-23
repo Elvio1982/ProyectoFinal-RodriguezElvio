@@ -21,12 +21,23 @@ comprar.className = "Comprar";
 content.append(comprar);
 
 comprar.addEventListener("click", () => {
-  carrito.push ({
+const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
+
+if (repeat) {
+  carrito.map ((prod) => {
+    if (prod.id === product.id){
+      prod.cantidad++;
+    }
+  });
+}else {
+carrito.push ({
     id: product.id,
     Img: product.Img,
     nombre: product.nombre,
     precio: product.precio,
+    cantidad: product.cantidad,
   });
+}
   console.log(carrito);
 });
 });
