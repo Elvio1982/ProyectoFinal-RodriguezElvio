@@ -25,6 +25,7 @@ modalHeader.innerHTML = `
     <img src= "${product.Img}">
     <h3>${product.nombre}</h3>
     <p>${product.precio} $</p>
+    <p>cantidad: ${product.cantidad}</p>
     <p>Total: ${product.cantidad * product.precio}</p>
 
     `;
@@ -56,10 +57,18 @@ modalHeader.innerHTML = `
       return carritoId !== foundId;
       });
       carritocounter();
+      guardalocal();
       pintarcarrito();
 };
 
 const carritocounter = ()  => {
   cantidadcarrito.style.display = "block";
-  cantidadcarrito.innerText = carrito.length
-}
+
+  const carritolength = carrito.length;
+
+localStorage.setItem("carritolength", JSON.stringify(carritolength))
+
+  cantidadcarrito.innerText = JSON.parse(localStorage.getItem("carritolength"));
+};
+
+carritocounter()

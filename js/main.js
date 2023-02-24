@@ -3,7 +3,7 @@ const vercarrito = document.getElementById("vercarrito");
 const modalContainer = document.getElementById("modal-container");
 const cantidadcarrito = document.getElementById("cantidadcarrito");
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) ||[];
 
 productos.forEach((product) => {
   let content = document.createElement("div");
@@ -38,9 +38,22 @@ carrito.push ({
     precio: product.precio,
     cantidad: product.cantidad,
   });
-}
+
   console.log(carrito);
+  console.log(carrito.length);
   carritocounter();
+  guardalocal();
+}
+
 });
 });
+
+//Agrego localStorage
+
+const guardalocal = () => {
+localStorage.setItem("carrito", JSON.stringify(carrito));
+};
+
+
+
 
