@@ -1,5 +1,6 @@
 body {
-    margin: 5px;
+    margin: 0px;
+    
 }
 /*navbar*/
 .nav-container {
@@ -31,8 +32,8 @@ body {
 .banner {
     background-size: cover;
     background-position: center;
-    height: 20vh;
-    background-image: -o-linear-gradient();
+    height: 25vh;
+    background-image: linear-gradient(rgba(0,0,0,0,4), rgba(0,0,0,0,4)),
 }
 
 .banner-container {
@@ -64,8 +65,8 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 30px;
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-left: 70px;
+    margin-right: 70px;
 }
 .card {
     box-shadow: 0 4px 8px 0 rgb(13, 13, 13);
@@ -80,7 +81,7 @@ body {
 }
 .price {
     color: rgb(125, 116, 116);
-    font-size: 22px;
+    font-size: 23px;
 }
 .card button {
     border: none;
@@ -91,15 +92,15 @@ body {
 }
 
 .card button:hover {
-    opacity: 0.9;
+    opacity: 0.7;
 }
 
 /*Modal content*/
 
 .modal-container {
-width: 80%;
-margin: 0 10%;
-max-height: 80%;
+width: 60%;
+margin: 0 20%;
+max-height: 70%;
 color: aliceblue;
 background-color: rgb(11, 11, 11);
 display: flex;
@@ -135,13 +136,13 @@ width: 100%;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 90%;
-    margin: 10px;
+    width: 100%;
+    margin: 8px;
 }
 
 .modal-container > div > Img {
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
 }
 .total-content {
     font-size: 30px;
@@ -165,5 +166,19 @@ width: 100%;
     right: 14px;
     position: absolute;
     display: none;
-
 }
+
+.sumar {
+    cursor: pointer;
+}
+
+.restar {
+    cursor: pointer;
+}
+
+.footer {
+    background-color: rgba(118, 180, 31, 0.937);
+    padding: 0.1rem 0;
+    text-align: center;
+    margin-top: 15rem;
+  }
