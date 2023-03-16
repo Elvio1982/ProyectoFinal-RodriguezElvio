@@ -1,3 +1,13 @@
+/** SWEET ALERT */
+Swal.fire({
+  title: 'Bienvenidos a Super Alvarito ❤',
+  text: 'Los mejores productos de Rosario!',
+  footer: 'Gracias por su visita',
+  timer: 4000,
+  timerProgressBar: true,
+
+})
+
 const pintarcarrito = () => {
   modalContainer.innerHTML = "";
   modalContainer.style.display = "flex";
@@ -16,6 +26,10 @@ const pintarcarrito = () => {
       modalContainer.style.display = "none";
     });
     
+
+
+
+    
     modalHeader.append(modalbutton);
     
     carrito.forEach((product) => {
@@ -30,7 +44,7 @@ const pintarcarrito = () => {
       <span class="sumar"> ➕ </span>
       <p>Total: ${product.cantidad * product.precio}</p>
       <span class="delete-product"> ❌ </span>
-      `;
+`;
     
     
       modalContainer.append(carritoContent);

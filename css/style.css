@@ -1,7 +1,7 @@
 body {
     margin: 0px;
-    
 }
+
 /*navbar*/
 .nav-container {
     position: sticky;
@@ -18,13 +18,13 @@ body {
     justify-self: start;
     margin-left: 20px;
     color: aqua;
-    margin-top: 4vh;
+    margin-top: 1vh;
     cursor: pointer;
 }
 .ver-carrito {
     font-size: 25px;
     margin-right: 20px;
-    margin-top: 3.5vh;
+    margin-top: 1vh;
     cursor: pointer;
 }
 
@@ -32,7 +32,7 @@ body {
 .banner {
     background-size: cover;
     background-position: center;
-    height: 25vh;
+    height: 15vh;
     background-image: linear-gradient(rgba(0,0,0,0,4), rgba(0,0,0,0,4)),
 }
 
@@ -64,25 +64,28 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 30px;
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-top: 20px;
+    margin-left: 65px;  
+    margin-right: 65px;
 }
 .card {
     box-shadow: 0 4px 8px 0 rgb(13, 13, 13);
-    max-width: 300px;
+    max-width: 290px;
     margin: auto;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 .card > img {
     width: 95%;
-    height: 270px;
+    height: 260px;
 }
+
+/* Precio */
 .price {
     color: rgb(125, 116, 116);
-    font-size: 23px;
+    font-size: 24px;
 }
+
 .card button {
     border: none;
     outline: 5;
@@ -176,9 +179,11 @@ width: 100%;
     cursor: pointer;
 }
 
+/* Footer */
 .footer {
     background-color: rgba(118, 180, 31, 0.937);
     padding: 0.1rem 0;
     text-align: center;
     margin-top: 15rem;
   }
+
