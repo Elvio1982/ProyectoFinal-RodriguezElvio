@@ -1,39 +1,23 @@
-/** SWEET ALERT */
-Swal.fire({
-  title: 'Bienvenidos a Super Alvarito ❤',
-  text: 'Los mejores productos de Rosario!',
-  footer: 'Gracias por su visita',
-  timer: 4000,
-  timerProgressBar: true,
-
-})
-
 const pintarcarrito = () => {
   modalContainer.innerHTML = "";
   modalContainer.style.display = "flex";
-  const modalHeader = document.createElement("div");
+  
+const modalHeader = document.createElement("div");
   modalHeader.className = "modal-header";
   modalHeader.innerHTML = `
     <h1 class="modal-header-title">Carrito</h1>
     `;
-    modalContainer.append(modalHeader);
-    
-    const modalbutton = document.createElement("h2");
-    modalbutton.innerText = "X";
-    modalbutton.className = "modal-header-button";
-    
-    modalbutton.addEventListener("click", () => {
-      modalContainer.style.display = "none";
-    });
-    
+  modalContainer.append(modalHeader);
 
-
-
-    
-    modalHeader.append(modalbutton);
-    
-    carrito.forEach((product) => {
-      let carritoContent = document.createElement("div");
+const modalbutton = document.createElement("h2");
+  modalbutton.innerText = "X";
+  modalbutton.className = "modal-header-button";
+  modalbutton.addEventListener("click", () => {
+  modalContainer.style.display = "none";
+});
+  modalHeader.append(modalbutton);
+carrito.forEach((product) => {
+  let carritoContent = document.createElement("div");
       carritoContent.className = "modal-content";
       carritoContent.innerHTML = `
       <img src= "${product.Img}">
@@ -45,64 +29,60 @@ const pintarcarrito = () => {
       <p>Total: ${product.cantidad * product.precio}</p>
       <span class="delete-product"> ❌ </span>
 `;
-    
-    
-      modalContainer.append(carritoContent);
+
+modalContainer.append(carritoContent);
 
 // restar productos
-      let restar = carritoContent.querySelector(".restar");
+  let restar = carritoContent.querySelector(".restar");
       restar.addEventListener("click", () => {
-      if(product.cantidad !== 0) {
+  if(product.cantidad !== 0) {
       product.cantidad--;
-      }
-      guardalocal();
-      pintarcarrito();
-      });
+}
+guardalocal();
+pintarcarrito();
+
+});
+
 // sumar productos
-      let sumar = carritoContent.querySelector(".sumar");
+  let sumar = carritoContent.querySelector(".sumar");
       sumar.addEventListener("click", () => {
       product.cantidad++;
-      guardalocal();
-      pintarcarrito();
-      });
+guardalocal();
+pintarcarrito();
+});
 
-      let eliminar = carritoContent.querySelector(".delete-product");
-
+  let eliminar = carritoContent.querySelector(".delete-product");
       eliminar.addEventListener("click", () => {
-        eliminarProducto(product.id);
-      });
-     });
+      eliminarProducto(product.id);
+});
+});
   
-     const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
-    
-     const totalBuying = document.createElement("div")
-     totalBuying.className = "total-content"
-     totalBuying.innerHTML = `total a pagar: ${total} $`;
-     modalContainer.append(totalBuying);
-    };
+const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
+  const totalBuying = document.createElement("div")
+  totalBuying.className = "total-content"
+  totalBuying.innerHTML = `Total a pagar: ${total} $`;
+  modalContainer.append(totalBuying);
+};
+
+vercarrito.addEventListener("click", pintarcarrito);
+  const eliminarProducto = (id) => {
+  const foundId = carrito.find((element) => element.id === id);
+  carrito = carrito.filter((carritoId) => {
+  return carritoId !== foundId;
+});
+carritocounter();
+guardalocal();
+pintarcarrito();
+};
   
-    vercarrito.addEventListener("click", pintarcarrito);
+const carritocounter = ()  => {
+  cantidadcarrito.style.display = "block";
+  const carritolength = carrito.length;
   
-    const eliminarProducto = (id) => {
-      const foundId = carrito.find((element) => element.id === id);
-  
-      carrito = carrito.filter((carritoId) => {
-        return carritoId !== foundId;
-        });
-        carritocounter();
-        guardalocal();
-        pintarcarrito();
-  };
-  
-  const carritocounter = ()  => {
-    cantidadcarrito.style.display = "block";
-  
-    const carritolength = carrito.length;
-  
-  localStorage.setItem("carritolength", JSON.stringify(carritolength))
-  
-    cantidadcarrito.innerText = JSON.parse(localStorage.getItem("carritolength"));
-  };
-  
-  
+localStorage.setItem("carritolength", JSON.stringify(carritolength))
+  cantidadcarrito.innerText = JSON.parse(localStorage.getItem("carritolength"));
+};
+
 carritocounter()
+
+/* End carrito*/
